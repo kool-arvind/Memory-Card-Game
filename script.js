@@ -10,13 +10,6 @@ btn_1.style.backgroundColor = 'cyan'
 ans.innerHTML = 'Player 1 Turn';
 boxes.innerHTML = ''
 
-    // let myArr = ['🐒', '🐒', '🐇', '🐇', '🐕', '🐕','🐸','🐸'];
-
-
-
-// let myArr = ['🐒', '🐒', '🐇', '🐇', '🐫', '🐫', '🐷', '🐷', '🐀', '🐀', '🦄', '🦄', '🐕', '🐕', '🦔', '🦔','🐲','🐲','🐸','🐸'];
-
-
 let myArr = ['🐒', '🐒', '🐇', '🐇', '🐫', '🐫',  '🐀', '🐀', '🐕', '🐕', '🦔', '🦔','🐲','🐲','🐸','🐸'];
 
 
@@ -42,14 +35,13 @@ box.forEach((el, indx) => {
         el.classList.toggle('toggle')
         
         setRandom(randomGen);
-        console.log('I am box');
 
         checkImg(randomGen, indx, el);
 
     })
 
 })
-console.log(randomGen);
+
 
 
 let p1 = 0;
@@ -63,7 +55,7 @@ function checkImg(randomGen, indx, el) {
     preClass.push(el)
     if (pushImg.length == 2) {
         cnt++;
-        console.log(cnt);
+        
         changePlayer(cnt)
 
 
@@ -88,8 +80,7 @@ function checkImg(randomGen, indx, el) {
         }
        
     }
-    // console.log(pushImg,pushImg.length);
-    // console.log(preClass,preClass.length);
+    
 }
 
 function changePlayer(cnt){
@@ -140,7 +131,7 @@ function endGame(){
     }
     else{
         newGame.innerHTML = `<button class='rest'>Restart</button>`
-        ans.innerHTML = `<div>Player 1 is Won Total Point is ${p2}</div>`
+        ans.innerHTML = `<div>Player 2 is Won Total Point is ${p2}</div>`
         newGame.style.justifyContent = 'center'
         newGame.style.margin = '2px auto'
        
