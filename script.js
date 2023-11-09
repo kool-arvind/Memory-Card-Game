@@ -7,7 +7,7 @@ let ans = document.querySelector('.ans')
 let btn_1 = document.querySelector(".btn-1")
 let btn_2 = document.querySelector(".btn-2")
 btn_1.style.backgroundColor = 'cyan'
-
+ans.innerHTML = 'Player 1 Turn';
 boxes.innerHTML = ''
 
     // let myArr = ['🐒', '🐒', '🐇', '🐇', '🐕', '🐕','🐸','🐸'];
@@ -96,14 +96,14 @@ function changePlayer(cnt){
     if(cnt%2 == 0){
 btn_2.style.backgroundColor = 'transparent'
 btn_1.style.backgroundColor = 'cyan'
-
+ans.innerHTML = 'Player 1 Turn';
 
 
     }
     else{
 btn_2.style.backgroundColor = 'cyan'
 btn_1.style.backgroundColor = 'transparent'
-
+ans.innerHTML = 'Player 2 Turn';
 
     }
 }
