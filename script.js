@@ -57,7 +57,9 @@ function checkImg(randomGen, indx, el) {
         cnt++;
         
         changePlayer(cnt)
-
+        box.forEach((el)=>{
+            el.style.pointerEvents = 'none'
+        }
 
         if (pushImg[0] !== pushImg[1]) {
             setTimeout(() => {
@@ -65,6 +67,9 @@ function checkImg(randomGen, indx, el) {
                 el.classList.toggle('toggle')
                 preClass = [];
                 pushImg = [];
+                box.forEach((el)=>{
+            el.style.pointerEvents = 'initial'
+                }
             }, 700)
             
 
@@ -77,6 +82,9 @@ function checkImg(randomGen, indx, el) {
             cnt = cnt - 1;
             changePlayer(cnt)  
             setValue(cnt);   
+            box.forEach((el)=>{
+            el.style.pointerEvents = 'initial'
+            }
         }
        
     }
