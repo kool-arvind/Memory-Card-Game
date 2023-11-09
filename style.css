@@ -1,0 +1,176 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body,
+html{
+    width: 100%;
+    height: 100%;
+background-color: lightblue;
+
+}
+.container{
+position: relative;
+height: 100%;
+width: 100%;
+
+min-width: 470px;
+padding: 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+
+.boxes{
+   /* margin: 0 auto; */
+    margin-top: 30px;
+    width: 400px;
+    max-width:95% ;
+    perspective: 500px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+    place-items: center;
+    border-radius: 5px;
+  
+}
+.box{
+    position: relative;
+    transition: transform .8s cubic-bezier(0.4, 0.82, 0.94, 1.11);
+    transform-style: preserve-3d;
+    width: 95px;
+    height: 95px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px gray;
+
+}
+.front,
+.back{
+height: 95px;
+width: 95px;
+font-size: 1.3rem;
+line-height: 100px;
+text-align: center;
+position: absolute;
+backface-visibility: hidden;
+border-radius: 5px;
+}
+.front{
+    background-color: royalblue;
+    font-size: 3rem;
+    font-weight: 700;
+
+}
+.back{
+    background-color: crimson;
+    transform: rotateY(180deg);
+    font-size: 3rem;
+    /* pointer-events: none; */
+}
+
+/* .box:hover{
+    transform: rotateY(180deg);
+} */
+
+.back img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 5px;
+}
+.newGame{
+   /* width: 100%; */
+   margin: 20px;
+   display: flex;
+   justify-content: space-evenly;
+   text-align: center;
+   
+}
+.player-1,
+.player-2{
+    width: 200px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.newGame button{
+    padding: 3px 1rem;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    box-shadow: 2px 2px 5px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform .2s linear;
+}
+.newGame button:active{
+    transform: scale(.94);
+}
+.play-1,
+.play-2{
+    border: 1px solid;
+    padding: 4px 1rem;
+    border-radius: 5px;
+    background-color: lightgreen;
+    font-weight: 800;
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+
+.toggle{
+    transform: rotateY(180deg);
+
+}
+.ans{
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: monospace;
+    color: blueviolet;
+    font-weight: 800;
+    padding: 10px 0px;
+    overflow-wrap: break-word;
+    width: 200px;
+}
+@media (width <= 400px) {
+    .newGame{
+        flex-direction: column;
+        margin: 5px;
+
+    }
+    .player-1,
+    .player-2{
+        min-width: 400px;
+        justify-content: space-evenly;
+    }
+    .container{
+        align-items: center;
+    }
+    .boxes{
+        width: 300px;
+       grid-gap: 5px;
+
+    }
+    .box{
+        width: 70px;
+        height: 70px;
+    }
+    .front,
+    .back{
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+        line-height: 70px;
+    }
+    .newGame button{
+        font-size: 1rem;
+    }
+}
